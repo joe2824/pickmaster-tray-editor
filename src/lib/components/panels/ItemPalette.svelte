@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { Eye, EyeOff, Plus, X } from 'lucide-svelte';
   import { editor } from '$state/editor.svelte';
   import { selection } from '$state/selection.svelte';
   import { history } from '$state/history.svelte';
@@ -61,13 +62,11 @@
       onkeydown={(e) => e.key === 'Enter' && toggleActive(item.id)}
       title={isActive ? 'Klick auf Tray zum Platzieren · Esc zum Abbrechen' : 'Klick zum Aktivieren'}
     >
-      <!-- Visibility toggle -->
       <button
-        class="shrink-0 w-4 h-4 flex items-center justify-center text-[10px] leading-none
-               {isVisible ? 'text-brand-textdim hover:text-brand-text' : 'text-brand-textdim/40 hover:text-brand-textdim'}"
+        class="shrink-0 w-4 h-4 flex items-center justify-center {isVisible ? 'text-brand-textdim hover:text-brand-text' : 'text-brand-textdim/40 hover:text-brand-textdim'}"
         onclick={(e) => { e.stopPropagation(); viewport.toggleItemTypeVisibility(item.id); }}
         title={isVisible ? 'Ausblenden' : 'Einblenden'}
-      >{isVisible ? '●' : '○'}</button>
+      >{#if isVisible}<Eye size={12} />{:else}<EyeOff size={12} />{/if}</button>
 
       <span
         class="w-3 h-3 rounded-sm shrink-0 ring-1 ring-inset ring-black/20"
@@ -78,13 +77,11 @@
       </span>
       <span class="text-[9px] text-brand-textdim shrink-0">{item.size.x}×{item.size.y}</span>
 
-      <!-- Add-at-center button -->
       <button
-        class="shrink-0 w-5 h-5 flex items-center justify-center rounded text-brand-textdim
-               hover:text-brand-accent hover:bg-brand-accent/20 text-[13px] leading-none"
+        class="shrink-0 w-5 h-5 flex items-center justify-center rounded text-brand-textdim hover:text-brand-accent hover:bg-brand-accent/20"
         onclick={(e) => { e.stopPropagation(); addAtCenter(item.id); }}
         title="In Tray-Mitte platzieren"
-      >+</button>
+      ><Plus size={12} /></button>
     </div>
   {/each}
 
@@ -93,7 +90,7 @@
     <div class="mt-1 px-2 py-1.5 rounded bg-brand-accent/10 border border-brand-accent/30 text-[9px] text-brand-accent flex items-center gap-1">
       <span class="w-2 h-2 rounded-sm shrink-0" style="background:{colorHex(getItemColor(viewport.activeItemTypeId))}"></span>
       <span class="flex-1 truncate">Klick auf Tray → <b>{activeItem.name}</b></span>
-      <button class="text-brand-textdim hover:text-brand-text text-[11px]" onclick={() => (viewport.activeItemTypeId = null)} title="Abbrechen (Esc)">✕</button>
+      <button class="text-brand-textdim hover:text-brand-text" onclick={() => (viewport.activeItemTypeId = null)} title="Abbrechen (Esc)"><X size={11} /></button>
     </div>
   {/if}
 

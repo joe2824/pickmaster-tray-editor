@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { FolderOpen, Lock } from 'lucide-svelte';
   import { t } from '$i18n';
   import { localeState } from '$state/locale.svelte';
   import type { SavedProject } from '$io/indexeddb';
@@ -43,7 +44,7 @@
              hover:bg-brand-accent/80 active:scale-[0.98] transition-all"
       onclick={onLoad}
     >
-      <span class="text-lg">📂</span>
+      <FolderOpen size={16} />
       {t('landing.loadContainer')}
     </button>
   </div>
@@ -72,8 +73,8 @@
 
   <!-- Privacy + Disclaimer -->
   <div class="w-full max-w-md mt-6 space-y-2">
-    <p class="text-[10px] text-white/40 leading-relaxed text-center">
-      🔒 {t('landing.privacy')}
+    <p class="text-[10px] text-white/40 leading-relaxed text-center flex items-start justify-center gap-1.5">
+      <Lock size={10} class="shrink-0 mt-0.5" />{t('landing.privacy')}
     </p>
     <p class="text-[9px] text-white/25 leading-relaxed text-center">
       {t('landing.disclaimer')}

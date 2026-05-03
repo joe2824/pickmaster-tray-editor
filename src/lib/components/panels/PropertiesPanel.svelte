@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { ChevronLeft, ChevronRight, AlertTriangle } from 'lucide-svelte';
   import { editor } from '$state/editor.svelte';
   import { selection } from '$state/selection.svelte';
   import { history } from '$state/history.svelte';
@@ -66,7 +67,7 @@
       </div>
       <div class="pt-1 border-t border-brand-border grid grid-cols-2 gap-x-2 gap-y-1.5">
         <label for="prop-order" class="self-center {isDupOrder ? 'text-orange-400' : 'text-brand-textdim'}" title={isDupOrder ? t('props.dupOrder') : ''}>
-          {t('props.order')} {isDupOrder ? '⚠' : ''}
+          {t('props.order')} {#if isDupOrder}<AlertTriangle size={10} class="inline" />{/if}
         </label>
         <input id="prop-order" class="input-num {isDupOrder ? 'border-orange-400' : ''}" type="number" value={single.order} onchange={(e) => update('order', parseInt((e.target as HTMLInputElement).value))} step="1" min="0" />
       </div>
@@ -76,9 +77,9 @@
 
     <div class="pt-1 border-t border-brand-border flex items-center gap-1">
       <span class="text-brand-textdim shrink-0">{t('props.layer')}</span>
-      <button class="btn px-1 py-0.5 text-[11px] leading-none {!prevLayer ? 'disabled' : ''}" onclick={() => cycleLayer(-1)} title={t('props.prevLayer')}>◀</button>
+      <button class="btn px-1 py-0.5 {!prevLayer ? 'disabled' : ''}" onclick={() => cycleLayer(-1)} title={t('props.prevLayer')}><ChevronLeft size={13} /></button>
       <span class="flex-1 text-center text-brand-text truncate">{currentLayer?.name ?? '—'}</span>
-      <button class="btn px-1 py-0.5 text-[11px] leading-none {!nextLayer ? 'disabled' : ''}" onclick={() => cycleLayer(1)} title={t('props.nextLayer')}>▶</button>
+      <button class="btn px-1 py-0.5 {!nextLayer ? 'disabled' : ''}" onclick={() => cycleLayer(1)} title={t('props.nextLayer')}><ChevronRight size={13} /></button>
     </div>
     {#if editor.layers.length > 1}
       <select class="input-num w-full" value={currentLayerId ?? ''} onchange={(e) => { const id = parseInt((e.target as HTMLSelectElement).value); if (!isNaN(id)) assignToLayer(id); }}>

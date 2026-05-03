@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { Shield, ShieldOff, AlertTriangle } from 'lucide-svelte';
   import { editor } from '$state/editor.svelte';
   import { selection } from '$state/selection.svelte';
   import { viewport } from '$state/viewport.svelte';
@@ -19,20 +20,28 @@
     <span class="text-brand-accent">snap {viewport.snapSize}mm</span>
   {/if}
   <div class="flex-1"></div>
+
   <button
     class="flex items-center gap-1 hover:text-brand-text transition-colors"
     onclick={() => (viewport.collisionsEnabled = !viewport.collisionsEnabled)}
     title={viewport.collisionsEnabled ? t('status.toggleOn') : t('status.toggleOff')}
   >
-    <span class={viewport.collisionsEnabled ? 'text-brand-text' : 'opacity-30'}>⊘</span>
+    <span class={viewport.collisionsEnabled ? 'text-brand-text' : 'opacity-30'}>
+      {#if viewport.collisionsEnabled}<Shield size={12} />{:else}<ShieldOff size={12} />{/if}
+    </span>
     <span class={viewport.collisionsEnabled ? '' : 'opacity-30'}>{t('status.collision')}</span>
   </button>
+
   {#if viewport.collisionsEnabled}
     {#if dupOrderCount > 0}
-      <span class="text-[9px] text-orange-400" title={t('status.dupOrderTitle', { n: dupOrderCount })}>⚠ {dupOrderCount} {t('status.dupOrder')}</span>
+      <span class="flex items-center gap-1 text-[9px] text-orange-400" title={t('status.dupOrderTitle', { n: dupOrderCount })}>
+        <AlertTriangle size={11} />{dupOrderCount} {t('status.dupOrder')}
+      </span>
     {/if}
     {#if collisionCount > 0}
-      <span class="text-[9px] text-brand-red" title={t('status.collisionTitle', { n: collisionCount })}>⚠ {collisionCount} {t('status.overlap')}</span>
+      <span class="flex items-center gap-1 text-[9px] text-brand-red" title={t('status.collisionTitle', { n: collisionCount })}>
+        <AlertTriangle size={11} />{collisionCount} {t('status.overlap')}
+      </span>
     {/if}
   {/if}
 </div>

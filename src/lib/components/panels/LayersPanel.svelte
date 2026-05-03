@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { Eye, EyeOff, ArrowRight, Plus } from 'lucide-svelte';
   import { editor } from '$state/editor.svelte';
   import { selection } from '$state/selection.svelte';
   import { history } from '$state/history.svelte';
@@ -33,22 +34,24 @@
       onkeydown={(e) => e.key === 'Enter' && setActive(layer.id)}
     >
       <button
-        class="w-4 h-4 flex items-center justify-center text-[9px] shrink-0 {layer.visible ? 'text-brand-text' : 'text-brand-textdim'}"
+        class="w-4 h-4 flex items-center justify-center shrink-0 {layer.visible ? 'text-brand-text' : 'text-brand-textdim/40'}"
         onclick={(e) => { e.stopPropagation(); toggleVisibility(layer.id); }}
         title={layer.visible ? t('layers.hide') : t('layers.show')}
-      >{layer.visible ? '●' : '○'}</button>
+      >
+        {#if layer.visible}<Eye size={12} />{:else}<EyeOff size={12} />{/if}
+      </button>
       <span class="text-[10px] flex-1 truncate">{layer.name}</span>
       <span class="text-[9px] text-brand-textdim shrink-0">Z={layer.z}</span>
       {#if hasSelection}
         <button
-          class="btn px-1 py-0 text-[9px] text-brand-accent hover:bg-brand-accent/20 shrink-0"
+          class="btn px-1 py-0 text-brand-accent hover:bg-brand-accent/20 shrink-0"
           onclick={(e) => { e.stopPropagation(); assignSelectionToLayer(layer.id); }}
           title={t('layers.assign', { name: layer.name })}
-        >→</button>
+        ><ArrowRight size={11} /></button>
       {/if}
     </div>
   {/each}
-  <button class="btn w-full justify-center mt-2 text-brand-accent text-[10px]" onclick={() => addLayerModal.show()}>
-    {t('layers.add')}
+  <button class="btn w-full justify-center gap-1.5 mt-2 text-brand-accent text-[10px]" onclick={() => addLayerModal.show()}>
+    <Plus size={12} />{t('layers.add')}
   </button>
 </div>

@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { ChevronUp, ChevronDown, Lock } from 'lucide-svelte';
   import TrayInfo from './TrayInfo.svelte';
   import ItemPalette from './ItemPalette.svelte';
   import LayersPanel from './LayersPanel.svelte';
@@ -10,57 +11,49 @@
   let shortcutsOpen = $state(false);
 
   const groups = [
-    {
-      key: 'shortcuts.views',
-      rows: [
-        ['shortcuts.1234', 'shortcuts.1234.desc'],
-      ],
-    },
-    {
-      key: 'shortcuts.edit',
-      rows: [
-        ['shortcuts.undo',        'shortcuts.undo.desc'],
-        ['shortcuts.selAll',      'shortcuts.selAll.desc'],
-        ['shortcuts.dup',         'shortcuts.dup.desc'],
-        ['shortcuts.del',         'shortcuts.del.desc'],
-        ['shortcuts.esc',         'shortcuts.esc.desc'],
-        ['shortcuts.arrows',      'shortcuts.arrows.desc'],
-        ['shortcuts.shiftArrows', 'shortcuts.shiftArrows.desc'],
-        ['shortcuts.pageud',      'shortcuts.pageud.desc'],
-      ],
-    },
-    {
-      key: 'shortcuts.camera',
-      rows: [
-        ['shortcuts.pan',    'shortcuts.pan.desc'],
-        ['shortcuts.rotate', 'shortcuts.rotate.desc'],
-        ['shortcuts.zoom',   'shortcuts.zoom.desc'],
-      ],
-    },
+    { key: 'shortcuts.views', rows: [['shortcuts.1234','shortcuts.1234.desc']] },
+    { key: 'shortcuts.edit', rows: [
+      ['shortcuts.undo','shortcuts.undo.desc'],
+      ['shortcuts.selAll','shortcuts.selAll.desc'],
+      ['shortcuts.dup','shortcuts.dup.desc'],
+      ['shortcuts.del','shortcuts.del.desc'],
+      ['shortcuts.esc','shortcuts.esc.desc'],
+      ['shortcuts.arrows','shortcuts.arrows.desc'],
+      ['shortcuts.shiftArrows','shortcuts.shiftArrows.desc'],
+      ['shortcuts.pageud','shortcuts.pageud.desc'],
+    ]},
+    { key: 'shortcuts.camera', rows: [
+      ['shortcuts.pan','shortcuts.pan.desc'],
+      ['shortcuts.rotate','shortcuts.rotate.desc'],
+      ['shortcuts.zoom','shortcuts.zoom.desc'],
+    ]},
   ] as const;
 </script>
 
 <aside class="w-full h-full bg-brand-panel border-r border-brand-border flex flex-col overflow-hidden">
   <button class="panel-title" onclick={() => (trayOpen = !trayOpen)}>
-    <span>{t('panel.tray')}</span><span>{trayOpen ? '▲' : '▼'}</span>
+    <span>{t('panel.tray')}</span>
+    {#if trayOpen}<ChevronUp size={11} />{:else}<ChevronDown size={11} />{/if}
   </button>
   {#if trayOpen}<TrayInfo />{/if}
 
   <button class="panel-title" onclick={() => (itemsOpen = !itemsOpen)}>
-    <span>{t('panel.itemTypes')}</span><span>{itemsOpen ? '▲' : '▼'}</span>
+    <span>{t('panel.itemTypes')}</span>
+    {#if itemsOpen}<ChevronUp size={11} />{:else}<ChevronDown size={11} />{/if}
   </button>
   {#if itemsOpen}<ItemPalette />{/if}
 
   <button class="panel-title" onclick={() => (layersOpen = !layersOpen)}>
-    <span>{t('panel.layers')}</span><span>{layersOpen ? '▲' : '▼'}</span>
+    <span>{t('panel.layers')}</span>
+    {#if layersOpen}<ChevronUp size={11} />{:else}<ChevronDown size={11} />{/if}
   </button>
   {#if layersOpen}<LayersPanel />{/if}
 
   <div class="flex-1 overflow-y-auto"></div>
 
-  <!-- Keyboard shortcuts -->
   <button class="panel-title shrink-0" onclick={() => (shortcutsOpen = !shortcutsOpen)}>
-    <span>{t('shortcuts.title')}</span><span>{shortcutsOpen ? '▲' : '▼'}</span>
+    <span>{t('shortcuts.title')}</span>
+    {#if shortcutsOpen}<ChevronUp size={11} />{:else}<ChevronDown size={11} />{/if}
   </button>
   {#if shortcutsOpen}
     <div class="shrink-0 px-2 py-1.5 space-y-2 text-[9px]">
@@ -78,9 +71,11 @@
     </div>
   {/if}
 
-  <!-- Disclaimer -->
-  <div class="shrink-0 px-3 py-2 border-t border-brand-border text-[9px] text-white/40 leading-relaxed select-none">
-    <p>{t('disclaimer.line1')}</p>
-    <p>{t('disclaimer.line2')}</p>
+  <div class="shrink-0 px-3 py-2 border-t border-brand-border text-[9px] text-white/40 leading-relaxed select-none flex items-start gap-1.5">
+    <Lock size={9} class="shrink-0 mt-0.5 opacity-60" />
+    <div>
+      <p>{t('disclaimer.line1')}</p>
+      <p>{t('disclaimer.line2')}</p>
+    </div>
   </div>
 </aside>

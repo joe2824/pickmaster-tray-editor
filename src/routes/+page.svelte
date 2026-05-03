@@ -1,4 +1,5 @@
 <script lang="ts">
+  import { ChevronLeft, ChevronRight } from 'lucide-svelte';
   import Header from '$components/Header.svelte';
   import SidebarLeft from '$components/panels/SidebarLeft.svelte';
   import SidebarRight from '$components/panels/SidebarRight.svelte';
@@ -169,7 +170,7 @@
         class="absolute top-1/2 -translate-y-1/2 left-0 w-3 h-7 bg-brand-panel2 border border-brand-border rounded-r text-[8px] text-brand-textdim hover:text-brand-text flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
         onclick={() => (leftVisible = !leftVisible)}
         title={leftVisible ? 'Linke Leiste ausblenden' : 'Linke Leiste einblenden'}
-      >{leftVisible ? '‹' : '›'}</button>
+      >{#if leftVisible}<ChevronLeft size={9} />{:else}<ChevronRight size={9} />{/if}</button>
     </div>
 
     {#if !leftVisible}
@@ -177,7 +178,7 @@
         class="shrink-0 w-4 bg-brand-panel2 border-r border-brand-border text-[8px] text-brand-textdim hover:text-brand-text flex items-center justify-center"
         onclick={() => (leftVisible = true)}
         title="Linke Leiste einblenden"
-      >›</button>
+      ><ChevronRight size={9} /></button>
     {/if}
 
     <!-- Viewport -->
@@ -195,7 +196,7 @@
         class="shrink-0 w-4 bg-brand-panel2 border-l border-brand-border text-[8px] text-brand-textdim hover:text-brand-text flex items-center justify-center"
         onclick={() => (rightVisible = true)}
         title="Rechte Leiste einblenden"
-      >‹</button>
+      ><ChevronLeft size={9} /></button>
     {/if}
 
     <!-- Right resize handle + collapse toggle -->
@@ -209,7 +210,7 @@
         class="absolute top-1/2 -translate-y-1/2 right-0 w-3 h-7 bg-brand-panel2 border border-brand-border rounded-l text-[8px] text-brand-textdim hover:text-brand-text flex items-center justify-center opacity-0 group-hover:opacity-100 transition-opacity"
         onclick={() => (rightVisible = !rightVisible)}
         title={rightVisible ? 'Rechte Leiste ausblenden' : 'Rechte Leiste einblenden'}
-      >{rightVisible ? '›' : '‹'}</button>
+      >{#if rightVisible}<ChevronRight size={9} />{:else}<ChevronLeft size={9} />{/if}</button>
     </div>
 
     {#if rightVisible}

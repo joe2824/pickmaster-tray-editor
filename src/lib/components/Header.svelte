@@ -1,4 +1,8 @@
 <script lang="ts">
+  import {
+    Undo2, Redo2, FolderOpen, Download, FilePlus2,
+    Magnet, Boxes, Ruler, LayoutGrid,
+  } from 'lucide-svelte';
   import { history } from '$state/history.svelte';
   import { viewport } from '$state/viewport.svelte';
   import { editor } from '$state/editor.svelte';
@@ -59,19 +63,31 @@
   </span>
 
   <div class="flex gap-0.5 shrink-0">
-    <button class="btn {history.canUndo ? '' : 'disabled'}" onclick={() => history.undo()} title="Undo (Ctrl+Z)">↶</button>
-    <button class="btn {history.canRedo ? '' : 'disabled'}" onclick={() => history.redo()} title="Redo (Ctrl+Shift+Z)">↷</button>
+    <button class="btn {history.canUndo ? '' : 'disabled'}" onclick={() => history.undo()} title="Undo (Ctrl+Z)">
+      <Undo2 size={13} />
+    </button>
+    <button class="btn {history.canRedo ? '' : 'disabled'}" onclick={() => history.redo()} title="Redo (Ctrl+Shift+Z)">
+      <Redo2 size={13} />
+    </button>
   </div>
 
   <div class="w-px h-5 bg-brand-border shrink-0"></div>
 
-  <button class="btn shrink-0" onclick={newProject}>✦ {t('header.new')}</button>
-  <button class="btn shrink-0" onclick={loadTray}>📂 {t('header.loadTray')}</button>
-  <button class="btn shrink-0" onclick={exportTray} title={t('header.exportTitle')} disabled={!editor.tray}>💾 {t('header.export')}</button>
+  <button class="btn shrink-0 gap-1.5" onclick={newProject}>
+    <FilePlus2 size={13} />{t('header.new')}
+  </button>
+  <button class="btn shrink-0 gap-1.5" onclick={loadTray}>
+    <FolderOpen size={13} />{t('header.loadTray')}
+  </button>
+  <button class="btn shrink-0 gap-1.5" onclick={exportTray} title={t('header.exportTitle')} disabled={!editor.tray}>
+    <Download size={13} />{t('header.export')}
+  </button>
 
   <div class="w-px h-5 bg-brand-border shrink-0"></div>
 
-  <button class="btn shrink-0 {viewport.snap ? 'active' : ''}" onclick={() => (viewport.snap = !viewport.snap)} title={t('header.snapTitle')}>⊞ {t('header.snap')}</button>
+  <button class="btn shrink-0 gap-1.5 {viewport.snap ? 'active' : ''}" onclick={() => (viewport.snap = !viewport.snap)} title={t('header.snapTitle')}>
+    <Magnet size={13} />{t('header.snap')}
+  </button>
   {#if viewport.snap}
     <input class="input-num w-14 shrink-0" type="number" bind:value={viewport.snapSize} min="1" step="1" title={t('header.snapUnit')} />
     <span class="text-[10px] text-brand-textdim shrink-0">{t('header.snapUnit')}</span>
@@ -79,9 +95,15 @@
 
   <div class="w-px h-5 bg-brand-border shrink-0"></div>
 
-  <button class="btn shrink-0 {viewport.wireframe ? 'active' : ''}" onclick={() => (viewport.wireframe = !viewport.wireframe)} title={t('header.edgesTitle')}>⬡ {t('header.edges')}</button>
-  <button class="btn shrink-0 {viewport.mode === 'measure' ? 'active' : ''}" onclick={toggleMeasure} title={t('header.measureTitle')}>📐 {t('header.measure')}</button>
-  <button class="btn shrink-0" onclick={() => patternModal.show()} title={t('header.patternTitle')} disabled={Object.keys(editor.items).length === 0}>⊡ {t('header.pattern')}</button>
+  <button class="btn shrink-0 gap-1.5 {viewport.wireframe ? 'active' : ''}" onclick={() => (viewport.wireframe = !viewport.wireframe)} title={t('header.edgesTitle')}>
+    <Boxes size={13} />{t('header.edges')}
+  </button>
+  <button class="btn shrink-0 gap-1.5 {viewport.mode === 'measure' ? 'active' : ''}" onclick={toggleMeasure} title={t('header.measureTitle')}>
+    <Ruler size={13} />{t('header.measure')}
+  </button>
+  <button class="btn shrink-0 gap-1.5" onclick={() => patternModal.show()} title={t('header.patternTitle')} disabled={Object.keys(editor.items).length === 0}>
+    <LayoutGrid size={13} />{t('header.pattern')}
+  </button>
 
   <div class="flex-1 min-w-0"></div>
 
@@ -92,10 +114,7 @@
 
   <div class="w-px h-5 bg-brand-border shrink-0"></div>
 
-  <!-- Language toggle -->
-  <button
-    class="btn shrink-0 text-[10px] font-bold text-brand-accent"
-    onclick={() => localeState.toggle()}
-    title="Switch language"
-  >{t('header.langSwitch')}</button>
+  <button class="btn shrink-0 text-[10px] font-bold text-brand-accent" onclick={() => localeState.toggle()} title="Switch language">
+    {t('header.langSwitch')}
+  </button>
 </header>

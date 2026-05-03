@@ -1,4 +1,10 @@
 <script lang="ts">
+  import {
+    AlignLeft, AlignCenter, AlignRight,
+    AlignStartVertical, AlignCenterVertical, AlignEndVertical,
+    AlignHorizontalDistributeCenter, AlignVerticalDistributeCenter,
+    RotateCcw, RotateCw,
+  } from 'lucide-svelte';
   import { editor } from '$state/editor.svelte';
   import { selection } from '$state/selection.svelte';
   import { history } from '$state/history.svelte';
@@ -55,21 +61,31 @@
 <div class="px-3 py-2 space-y-2 text-[10px]">
   <div class="text-brand-textdim text-[9px] uppercase tracking-widest">{t('align.title')}</div>
   <div class="grid grid-cols-3 gap-1">
-    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('left')} title={t('align.title')}>⬤←</button>
-    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('centerX')}>⬤→←</button>
-    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('right')}>→⬤</button>
-    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('top')}>↑⬤</button>
-    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('centerY')}>⬤↕</button>
-    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('bottom')}>⬤↓</button>
+    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('left')} title={t('align.left')}><AlignLeft size={13} /></button>
+    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('centerX')} title={t('align.centerH')}><AlignCenter size={13} /></button>
+    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('right')} title={t('align.right')}><AlignRight size={13} /></button>
+    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('top')} title={t('align.top')}><AlignStartVertical size={13} /></button>
+    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('centerY')} title={t('align.centerV')}><AlignCenterVertical size={13} /></button>
+    <button class="btn justify-center {disabled ? 'disabled' : ''}" onclick={() => align('bottom')} title={t('align.bottom')}><AlignEndVertical size={13} /></button>
   </div>
+
   <div class="text-brand-textdim text-[9px] uppercase tracking-widest pt-1">{t('align.distribute')}</div>
   <div class="flex gap-1">
-    <button class="btn flex-1 justify-center {distDisabled ? 'disabled' : ''}" onclick={() => distribute('x')}>{t('align.distribute')} X</button>
-    <button class="btn flex-1 justify-center {distDisabled ? 'disabled' : ''}" onclick={() => distribute('y')}>{t('align.distribute')} Y</button>
+    <button class="btn flex-1 justify-center gap-1 {distDisabled ? 'disabled' : ''}" onclick={() => distribute('x')} title="X">
+      <AlignHorizontalDistributeCenter size={13} /><span>X</span>
+    </button>
+    <button class="btn flex-1 justify-center gap-1 {distDisabled ? 'disabled' : ''}" onclick={() => distribute('y')} title="Y">
+      <AlignVerticalDistributeCenter size={13} /><span>Y</span>
+    </button>
   </div>
+
   <div class="text-brand-textdim text-[9px] uppercase tracking-widest pt-1">{t('align.rotation')}</div>
   <div class="flex gap-1">
-    <button class="btn flex-1 justify-center {selection.size === 0 ? 'disabled' : ''}" onclick={() => rotateAll(-90)}>↺ -90°</button>
-    <button class="btn flex-1 justify-center {selection.size === 0 ? 'disabled' : ''}" onclick={() => rotateAll(90)}>↻ +90°</button>
+    <button class="btn flex-1 justify-center gap-1 {selection.size === 0 ? 'disabled' : ''}" onclick={() => rotateAll(-90)}>
+      <RotateCcw size={13} /><span>-90°</span>
+    </button>
+    <button class="btn flex-1 justify-center gap-1 {selection.size === 0 ? 'disabled' : ''}" onclick={() => rotateAll(90)}>
+      <RotateCw size={13} /><span>+90°</span>
+    </button>
   </div>
 </div>

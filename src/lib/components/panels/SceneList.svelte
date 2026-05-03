@@ -3,6 +3,7 @@
   import { selection } from '$state/selection.svelte';
   import { history } from '$state/history.svelte';
   import { getItemColor } from '$three/coords';
+  import { X } from 'lucide-svelte';
   import { t } from '$i18n';
 
   const sorted = $derived([...editor.arranged].sort((a, b) => a.order - b.order));
@@ -59,9 +60,9 @@
       <span class="text-[11px] flex-1 truncate {isActive ? 'text-brand-accent font-semibold' : 'text-white/85'}">{itemDef?.name ?? arr.itemId.slice(0, 8)}</span>
       <span class="text-[10px] shrink-0 {isActive ? 'text-brand-accent/70' : 'text-white/35'}">L{arr.layerId}</span>
       <button
-        class="text-white/25 hover:text-brand-red text-[10px] px-0.5 shrink-0"
+        class="text-white/25 hover:text-brand-red px-0.5 shrink-0"
         onclick={(e) => { e.stopPropagation(); remove(arr.id); }}
-      >✕</button>
+      ><X size={10} /></button>
     </div>
   {/each}
   {#if editor.arranged.length === 0}
