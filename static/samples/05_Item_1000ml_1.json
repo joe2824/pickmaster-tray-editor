@@ -1,0 +1,60 @@
+{
+  "$type": "PickMaster.Core.Process.Item.ItemModel, PickMaster.Core",
+  "RapidParameter": {
+    "$type": "PickMaster.Core.Process.Item.RapidParameterModel, PickMaster.Core",
+    "AcceptType": 1,
+    "RejectType": 100
+  },
+  "IgnoreOrientation": false,
+  "ItemFileName": "STD 1000 Dummy MidBag.rslib",
+  "CustomizedItemPosition": {
+    "$type": "PickMaster.Core.Utils.BaseData.ModelShared.PositionModel, PickMaster.Core.Utils",
+    "X": 0.0,
+    "Y": 0.0,
+    "Z": 0.0,
+    "RX": 0.0,
+    "RY": 0.0,
+    "RZ": 0.0
+  },
+  "AppearanceModelName": "Default_1",
+  "ItemCircularConveyorId": "47332549-4c54-400e-bb45-c96791d35835",
+  "ItemType": 3,
+  "Size": {
+    "$type": "PickMaster.Core.Utils.MathStructure.Vector3, PickMaster.Core.Utils",
+    "x": 161.0,
+    "y": 341.0,
+    "z": 45.0,
+    "IsNaN": false
+  },
+  "AppearanceModel": {
+    "$type": "PickMaster.Core.Process.Item.AppearanceModel, PickMaster.Core",
+    "ItemColor": "Silver",
+    "HasLable": false,
+    "HasTexture": false,
+    "LabelModel": {
+      "$type": "PickMaster.Core.Process.Item.LabelModel, PickMaster.Core",
+      "Path": null,
+      "LabelLocationType": 0
+    },
+    "TexturePath": "D:\\Proj\\Mistral\\TLS\\TLS_BaB_V3\\PickMaster\\Items\\Snap2D.jpg",
+    "IsShowingContour": true,
+    "IsShowingOrientationMarker": true
+  },
+  "SourceType": 0,
+  "PositionModel": {
+    "$type": "PickMaster.Core.Utils.BaseData.ModelShared.PositionModel, PickMaster.Core.Utils",
+    "X": 0.0,
+    "Y": 0.0,
+    "Z": 0.0,
+    "RX": 0.0,
+    "RY": 0.0,
+    "RZ": 0.0
+  },
+  "ExtSensorPositionGeneratorList": {
+    "$type": "System.Collections.Generic.List`1[[PickMaster.Core.Process.ExternalSensor.ExtSensorPositionGeneratorModel, PickMaster.Core]], mscorlib",
+    "$values": []
+  },
+  "Name": "05_Item_1000ml_1",
+  "Index": 60001,
+  "Id": "0481898c-8857-4d5b-8507-b85d9cda0136"
+}

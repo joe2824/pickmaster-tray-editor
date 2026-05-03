@@ -1,0 +1,75 @@
+@import 'tailwindcss';
+
+@theme {
+  --color-brand-bg: #13161d;
+  --color-brand-panel: #191d27;
+  --color-brand-panel2: #1f2333;
+  --color-brand-border: #2c3245;
+  --color-brand-accent: #4f7cff;
+  --color-brand-accent2: #ff6b35;
+  --color-brand-text: #d4daf0;
+  --color-brand-textdim: #636b8a;
+  --color-brand-tray: #8b7355;
+  --color-brand-selected: #ffe566;
+  --color-brand-green: #3ecf8e;
+  --color-brand-red: #ff4d6d;
+
+  --font-mono: 'JetBrains Mono', ui-monospace, monospace;
+  --font-display: 'Syne', sans-serif;
+}
+
+@layer base {
+  html,
+  body {
+    height: 100%;
+    margin: 0;
+  }
+  body {
+    background: var(--color-brand-bg);
+    color: var(--color-brand-text);
+    font-family: var(--font-mono);
+    overflow: hidden;
+  }
+
+  ::-webkit-scrollbar {
+    width: 4px;
+    height: 4px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    background: var(--color-brand-border);
+    border-radius: 2px;
+  }
+  ::-webkit-scrollbar-thumb:hover {
+    background: var(--color-brand-textdim);
+  }
+}
+
+@layer components {
+  .panel-title {
+    @apply px-4 py-2 text-[9px] uppercase tracking-[0.15em] text-brand-textdim bg-brand-panel2 flex items-center justify-between cursor-pointer select-none;
+  }
+  .panel-title:hover {
+    @apply text-brand-text;
+  }
+
+  .btn {
+    @apply px-2.5 py-1 rounded-md bg-transparent text-brand-text text-[11px] font-mono whitespace-nowrap flex items-center gap-1.5 transition-colors;
+  }
+  .btn:hover {
+    @apply bg-brand-border text-white;
+  }
+  .btn.active {
+    @apply bg-brand-accent text-white;
+  }
+  .btn:disabled,
+  .btn.disabled {
+    @apply opacity-35 cursor-not-allowed pointer-events-none;
+  }
+
+  .input-num {
+    @apply bg-brand-panel2 border border-brand-border rounded-md px-2 py-1 text-brand-text font-mono text-[11px] focus:outline-none focus:border-brand-accent transition-colors w-full;
+  }
+}

@@ -1,0 +1,405 @@
+{
+  "$type": "PickMaster.Core.Process.Container.ContainerModel, PickMaster.Core",
+  "ContainerProperties": {
+    "$type": "PickMaster.Core.Process.Container.ContainerPropertiesModel, PickMaster.Core",
+    "AppearanceModelName": "Default",
+    "CustomizedContainerFileName": "CustomizedPMContainer.rslib",
+    "CustomizedContainerPosition": {
+      "$type": "PickMaster.Core.Utils.BaseData.ModelShared.PositionModel, PickMaster.Core.Utils",
+      "X": 0.0,
+      "Y": 0.0,
+      "Z": 0.0,
+      "RX": 0.0,
+      "RY": 0.0,
+      "RZ": 0.0
+    }
+  },
+  "ContainerPattern": {
+    "$type": "PickMaster.Core.Process.Container.ContainerPatternModel, PickMaster.Core",
+    "Layers": {
+      "$type": "System.Collections.Generic.List`1[[PickMaster.Core.Process.Container.LayerModel, PickMaster.Core]], mscorlib",
+      "$values": [
+        {
+          "$type": "PickMaster.Core.Process.Container.LayerModel, PickMaster.Core",
+          "LayerId": 1,
+          "Offset": 0.0,
+          "ArrangedItems": {
+            "$type": "System.Collections.Generic.List`1[[PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core]], mscorlib",
+            "$values": [
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 947.5,
+                "Y": 717.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 1,
+                "Id": "d39307f3-b692-40d1-8b21-b3f3fb255533"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 843.5,
+                "Y": 717.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 2,
+                "Id": "903a2a22-2b69-4f03-877e-1797fc220549"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 947.5,
+                "Y": 483.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 3,
+                "Id": "76567041-3e79-459f-a552-58d86c837e36"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 739.5,
+                "Y": 717.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 4,
+                "Id": "fd117bcc-9e8d-47cd-91ec-cf9ba1f55182"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 843.5,
+                "Y": 483.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 5,
+                "Id": "42d1de7d-f35d-4673-919b-f41baf7e1a0b"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "ed5ccff2-c57c-4fa7-8999-fbce771c3bcc",
+                "X": 947.5,
+                "Y": 249.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 6,
+                "Id": "8c4f095b-5e0b-49be-b185-b4a78e8a18f8"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 635.5,
+                "Y": 717.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 7,
+                "Id": "55baef3e-8b45-4962-bdc1-61ff9519fbc6"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 739.5,
+                "Y": 483.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 8,
+                "Id": "bf0fd500-348d-4c75-8411-7b6d987f09f1"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "ed5ccff2-c57c-4fa7-8999-fbce771c3bcc",
+                "X": 843.5,
+                "Y": 249.49999999999997,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 9,
+                "Id": "543eba8f-5d08-48b2-add9-1d186ad4704e"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 531.5,
+                "Y": 717.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 10,
+                "Id": "f64ddf88-ed68-4f88-a494-e098524ca097"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 635.5,
+                "Y": 483.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 11,
+                "Id": "51ee22a6-8ee5-42e7-a56b-ce5fe8818060"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "ed5ccff2-c57c-4fa7-8999-fbce771c3bcc",
+                "X": 739.5,
+                "Y": 249.49999999999997,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 12,
+                "Id": "11071f59-89b4-47f7-b905-8c7c059d9eab"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 427.5,
+                "Y": 717.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 13,
+                "Id": "b4b7f5d8-4f2e-4071-b4ad-b13da8235b34"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 531.5,
+                "Y": 483.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 14,
+                "Id": "581fa49b-6615-4df9-85b0-5e02733dac74"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "ed5ccff2-c57c-4fa7-8999-fbce771c3bcc",
+                "X": 635.5,
+                "Y": 249.49999999999997,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 15,
+                "Id": "50b47e1e-c866-4f09-8424-12c3920d1c2e"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 323.5,
+                "Y": 717.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 16,
+                "Id": "952d81ae-2447-4962-8d03-9045a963c987"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 427.5,
+                "Y": 483.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 17,
+                "Id": "d890be6f-9d28-4c19-a929-6752b0eff2df"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "ed5ccff2-c57c-4fa7-8999-fbce771c3bcc",
+                "X": 531.5,
+                "Y": 249.49999999999997,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 18,
+                "Id": "11266a53-824b-4380-b7f2-c08e6cd36269"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 219.5,
+                "Y": 717.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 19,
+                "Id": "157da3e5-96e5-4ddf-bce9-723273e5d431"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 323.5,
+                "Y": 483.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 20,
+                "Id": "c03245d9-3984-4414-9f3b-b9bfa899b0fc"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "ed5ccff2-c57c-4fa7-8999-fbce771c3bcc",
+                "X": 427.5,
+                "Y": 249.49999999999997,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 21,
+                "Id": "00cc7b36-40f1-4247-a65a-effa9d254060"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 115.50000000000003,
+                "Y": 717.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 22,
+                "Id": "a83c3171-a15c-4867-bdf2-bbf7ed0eb572"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 219.5,
+                "Y": 483.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 23,
+                "Id": "3d2f3a7d-3cbd-4ecb-8dfc-356f77976866"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "ed5ccff2-c57c-4fa7-8999-fbce771c3bcc",
+                "X": 323.5,
+                "Y": 249.49999999999997,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 24,
+                "Id": "28cb98f7-d617-4ce3-8a78-cc2bf8dcf2ec"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "0481898c-8857-4d5b-8507-b85d9cda0136",
+                "X": 115.50000000000003,
+                "Y": 483.5,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 25,
+                "Id": "78ae0bdc-9a1d-4d94-baa3-ebab1d8a4ce7"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "ed5ccff2-c57c-4fa7-8999-fbce771c3bcc",
+                "X": 219.5,
+                "Y": 249.49999999999997,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 26,
+                "Id": "31974569-68fd-4658-b86b-dd9127fdd7fb"
+              },
+              {
+                "$type": "PickMaster.Core.Process.Container.ArrangedItemModel, PickMaster.Core",
+                "ItemId": "ed5ccff2-c57c-4fa7-8999-fbce771c3bcc",
+                "X": 115.50000000000003,
+                "Y": 249.49999999999997,
+                "Z": 0.0,
+                "RX": 0.0,
+                "RY": 0.0,
+                "RZ": -180.0,
+                "Order": 27,
+                "Id": "d9da2c72-c8a4-4ebf-a28a-08c80f52fcdf"
+              }
+            ]
+          },
+          "SortingMethod": 2
+        }
+      ]
+    }
+  },
+  "ContainerPickId": "eb64cad8-2dbd-462c-8cfa-7724c6b3d039",
+  "ContainerIOPlaceId": "c3085ca9-02c3-4bca-b35b-3fc38f75da10",
+  "ContainerIOPickId": "ba2b21f2-4b6d-48c6-ab34-b155af115b21",
+  "ContainerCircularConveyorPlaceId": "a4adb7f8-5c3e-4fb7-ad9a-d42e6e96924a",
+  "ContainerCircularConveyorPickId": "4c849a95-1a72-4493-9e87-fd7e2f608b58",
+  "ContainerVisionPickId": "d912a41e-e7ec-46f7-8d3b-e2872811ad50",
+  "ItemType": 0,
+  "Size": {
+    "$type": "PickMaster.Core.Utils.MathStructure.Vector3, PickMaster.Core.Utils",
+    "x": 1065.0,
+    "y": 922.6,
+    "z": 5.0,
+    "IsNaN": false
+  },
+  "AppearanceModel": {
+    "$type": "PickMaster.Core.Process.Item.AppearanceModel, PickMaster.Core",
+    "ItemColor": "BurlyWood",
+    "HasLable": false,
+    "HasTexture": false,
+    "LabelModel": {
+      "$type": "PickMaster.Core.Process.Item.LabelModel, PickMaster.Core",
+      "Path": null,
+      "LabelLocationType": 0
+    },
+    "TexturePath": null,
+    "IsShowingContour": true,
+    "IsShowingOrientationMarker": true
+  },
+  "SourceType": 1,
+  "PositionModel": {
+    "$type": "PickMaster.Core.Utils.BaseData.ModelShared.PositionModel, PickMaster.Core.Utils",
+    "X": 0.0,
+    "Y": -461.3,
+    "Z": 0.0,
+    "RX": 0.0,
+    "RY": 0.0,
+    "RZ": 0.0
+  },
+  "ExtSensorPositionGeneratorList": {
+    "$type": "System.Collections.Generic.List`1[[PickMaster.Core.Process.ExternalSensor.ExtSensorPositionGeneratorModel, PickMaster.Core]], mscorlib",
+    "$values": []
+  },
+  "Name": "05_Tray_1000ml",
+  "Index": 5,
+  "Id": "194cb94c-ce6e-4c10-8d17-27e39a5c6a02"
+}

@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512">
+  <!-- Background -->
+  <rect width="512" height="512" rx="88" fill="#0d0f14"/>
+
+  <!-- Tray plate -->
+  <rect x="52" y="136" width="408" height="296" rx="12" fill="#7a6240"/>
+
+  <!-- Grid lines on tray -->
+  <line x1="52"  y1="284" x2="460" y2="284" stroke="#5c4a2a" stroke-width="2"/>
+  <line x1="187" y1="136" x2="187" y2="432" stroke="#5c4a2a" stroke-width="2"/>
+  <line x1="325" y1="136" x2="325" y2="432" stroke="#5c4a2a" stroke-width="2"/>
+
+  <!-- Row 1 col 1: Blue -->
+  <rect x="68"  y="152" width="103" height="118" rx="7" fill="#4f7cff"/>
+  <rect x="78"  y="252" width="83"  height="10"  rx="3" fill="#000" opacity="0.38"/>
+
+  <!-- Row 1 col 2: Orange -->
+  <rect x="203" y="152" width="103" height="118" rx="7" fill="#ff6b35"/>
+  <rect x="213" y="252" width="83"  height="10"  rx="3" fill="#000" opacity="0.38"/>
+
+  <!-- Row 1 col 3: Green -->
+  <rect x="341" y="152" width="103" height="118" rx="7" fill="#3ecf8e"/>
+  <rect x="351" y="252" width="83"  height="10"  rx="3" fill="#000" opacity="0.38"/>
+
+  <!-- Row 2 col 1: Purple — SELECTED (white outline) -->
+  <rect x="56"  y="272" width="127" height="142" rx="9" fill="white"/>
+  <rect x="68"  y="300" width="103" height="118" rx="7" fill="#a78bfa"/>
+  <rect x="78"  y="400" width="83"  height="10"  rx="3" fill="#000" opacity="0.38"/>
+
+  <!-- Row 2 col 2: Teal -->
+  <rect x="203" y="300" width="103" height="118" rx="7" fill="#38bdf8"/>
+  <rect x="213" y="400" width="83"  height="10"  rx="3" fill="#000" opacity="0.38"/>
+
+  <!-- Row 2 col 3: Red -->
+  <rect x="341" y="300" width="103" height="118" rx="7" fill="#ff4d6d"/>
+  <rect x="351" y="400" width="83"  height="10"  rx="3" fill="#000" opacity="0.38"/>
+</svg>
