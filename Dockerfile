@@ -20,7 +20,7 @@ RUN node scripts/generate-icons.mjs
 RUN npm run build
 
 # ─── Stage 2: Serve ───────────────────────────────────────────────────────────
-FROM nginx:1.27-alpine AS runner
+FROM nginx:stable-alpine AS runner
 
 # Copy build output
 COPY --from=builder /app/build /usr/share/nginx/html
