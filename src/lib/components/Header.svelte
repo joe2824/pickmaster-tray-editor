@@ -1,8 +1,9 @@
 <script lang="ts">
   import {
     Undo2, Redo2, FolderOpen, Download, FilePlus2,
-    Magnet, Boxes, Ruler, LayoutGrid,
+    Magnet, Boxes, Ruler, LayoutGrid, Box,
   } from 'lucide-svelte';
+  import { stlState } from '$state/stl.svelte';
   import { history } from '$state/history.svelte';
   import { viewport } from '$state/viewport.svelte';
   import { editor } from '$state/editor.svelte';
@@ -97,6 +98,16 @@
 
   <button class="btn shrink-0 gap-1.5 {viewport.wireframe ? 'active' : ''}" onclick={() => (viewport.wireframe = !viewport.wireframe)} title={t('header.edgesTitle')}>
     <Boxes size={13} />{t('header.edges')}
+  </button>
+  <button
+    class="btn shrink-0 gap-1.5 {viewport.useStlMeshes && stlState.count > 0 ? 'active' : ''}"
+    onclick={() => { if (stlState.count > 0) viewport.useStlMeshes = !viewport.useStlMeshes; }}
+    title={stlState.count > 0 ? t('stl.modeTitle') : t('stl.uploadHint')}
+  >
+    <Box size={13} />{t('stl.mode')}
+    {#if stlState.count > 0}
+      <span class="text-[9px] opacity-60">{stlState.count}</span>
+    {/if}
   </button>
   <button class="btn shrink-0 gap-1.5 {viewport.mode === 'measure' ? 'active' : ''}" onclick={toggleMeasure} title={t('header.measureTitle')}>
     <Ruler size={13} />{t('header.measure')}

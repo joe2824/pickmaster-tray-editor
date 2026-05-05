@@ -7,8 +7,9 @@ class ViewportState {
   mode = $state<EditMode>('select');
   snap = $state(false);
   snapSize = $state(10);
-  wireframe = $state(false);
-  collisionsEnabled = $state(true);
+  wireframe = $state(true);
+  collisionsEnabled = $state(false);
+  useStlMeshes = $state(false);
   activeItemTypeId = $state<string | null>(null);
   hiddenItemTypeIds = $state<string[]>([]);
 

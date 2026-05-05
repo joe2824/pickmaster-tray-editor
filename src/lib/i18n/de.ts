@@ -153,6 +153,21 @@ export const de: Record<string, string> = {
   'shortcuts.zoom': 'Mausrad',
   'shortcuts.zoom.desc': 'Zoom zum Cursor',
 
+  // STL
+  'stl.mode': 'STL',
+  'stl.modeTitle': '3D-Modelle (STL) anzeigen',
+  'stl.upload': 'STL hochladen',
+  'stl.remove': 'STL entfernen',
+  'stl.loaded': '3D-Modell geladen',
+  'stl.missingHint': '{n} Items ohne Typ — Item-Dateien in der linken Leiste laden',
+  'stl.uploadHint': 'STL-Dateien in der linken Leiste hochladen, dann aktivieren',
+  'stl.sectionTitle': '3D-Modelle (STL)',
+  'stl.sectionHint': 'Lade STL-Dateien um Boxen durch echte 3D-Modelle zu ersetzen.',
+  'stl.offsetRotation': 'Modell-Offset (Rotation)',
+  'stl.rx': 'RX (°)',
+  'stl.ry': 'RY (°)',
+  'stl.rz': 'RZ (°)',
+
   // Landing page
   'landing.title': 'Neue Konfiguration starten',
   'landing.subtitle': 'Lade eine Container-JSON-Datei, um den Editor zu starten.',

@@ -1,5 +1,6 @@
 <script lang="ts">
   import { ChevronLeft, ChevronRight } from 'lucide-svelte';
+  import MissingItemsHint from '$components/viewport/MissingItemsHint.svelte';
   import Header from '$components/Header.svelte';
   import SidebarLeft from '$components/panels/SidebarLeft.svelte';
   import SidebarRight from '$components/panels/SidebarRight.svelte';
@@ -19,7 +20,9 @@
   import { initShortcuts } from '$utils/shortcuts';
   import { t } from '$i18n';
   import { centerOrbitOnTray, parsePickMasterJson, applyParseResult } from '$io/parse';
-  import { loadProject, saveProject, type SavedProject } from '$io/indexeddb';
+  import { loadProject, saveProject, loadAllStls, loadStlRotations, type SavedProject } from '$io/indexeddb';
+  import { stlState } from '$state/stl.svelte';
+  import { parseStlBuffer } from '$three/stl';
   import { pickJsonFiles } from '$io/files';
   import { editor } from '$state/editor.svelte';
   import { history } from '$state/history.svelte';
@@ -119,9 +122,19 @@
   onMount(() => {
     // Load saved project for the landing page draft option
     // Do NOT auto-restore — let the user decide via landing page
-    loadProject().then((saved) => {
-      draft = saved;
+    loadProject().then((saved) => { draft = saved; });
+
+    // Restore cached STL geometries and rotations
+    loadAllStls().then(async (stls) => {
+      for (const [itemId, buffer] of Object.entries(stls)) {
+        try { stlState.set(itemId, parseStlBuffer(buffer)); } catch { /* corrupt */ }
+      }
+      const rots = await loadStlRotations();
+      if (rots) {
+        for (const [itemId, rot] of Object.entries(rots)) stlState.setRotation(itemId, rot);
+      }
     });
+
     return initShortcuts();
   });
 
@@ -188,6 +201,7 @@
       <ViewControls />
       <GizmoAxes />
       <MeasureTool />
+      <MissingItemsHint />
       <StatusBar />
     </div>
 

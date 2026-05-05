@@ -153,6 +153,21 @@ export const en: Record<string, string> = {
   'shortcuts.zoom': 'Scroll wheel',
   'shortcuts.zoom.desc': 'Zoom to cursor',
 
+  // STL
+  'stl.mode': 'STL',
+  'stl.modeTitle': 'Show 3D models (STL)',
+  'stl.upload': 'Upload STL',
+  'stl.remove': 'Remove STL',
+  'stl.loaded': '3D model loaded',
+  'stl.missingHint': '{n} items without type — load item files in the left panel',
+  'stl.uploadHint': 'Upload STL files in the left panel, then activate',
+  'stl.sectionTitle': '3D Models (STL)',
+  'stl.sectionHint': 'Upload STL files to replace boxes with real 3D models.',
+  'stl.offsetRotation': 'Model Offset (Rotation)',
+  'stl.rx': 'RX (°)',
+  'stl.ry': 'RY (°)',
+  'stl.rz': 'RZ (°)',
+
   // Landing page
   'landing.title': 'Start a new configuration',
   'landing.subtitle': 'Load a Container JSON file to launch the editor.',
