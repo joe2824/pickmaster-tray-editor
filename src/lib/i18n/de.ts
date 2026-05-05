@@ -180,6 +180,7 @@ export const de: Record<string, string> = {
   'landing.disclaimer': 'Dieses Projekt ist ein unabhängiges Community-Tool und steht in keiner offiziellen Verbindung zur ABB-Gruppe. ABB™ und PickMaster™ sind eingetragene Marken der ABB Asea Brown Boveri Ltd.',
 
   // Disclaimer
+  'disclaimer.openSource': 'Open-Source-Projekt auf GitHub',
   'disclaimer.line1': 'Kein offizielles ABB-Produkt.',
   'disclaimer.line2': 'PickMaster® ist eine eingetragene Marke von ABB Ltd.',
 

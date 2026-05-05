@@ -1,5 +1,5 @@
 <script lang="ts">
-  import { ChevronUp, ChevronDown, Lock } from 'lucide-svelte';
+  import { ChevronUp, ChevronDown, Lock, ExternalLink } from 'lucide-svelte';
   import TrayInfo from './TrayInfo.svelte';
   import ItemPalette from './ItemPalette.svelte';
   import LayersPanel from './LayersPanel.svelte';
@@ -71,11 +71,22 @@
     </div>
   {/if}
 
-  <div class="shrink-0 px-3 py-2 border-t border-brand-border text-[9px] text-white/40 leading-relaxed select-none flex items-start gap-1.5">
-    <Lock size={9} class="shrink-0 mt-0.5 opacity-60" />
-    <div>
-      <p>{t('disclaimer.line1')}</p>
-      <p>{t('disclaimer.line2')}</p>
+  <div class="shrink-0 px-3 py-2 border-t border-brand-border text-[9px] text-white/40 leading-relaxed select-none space-y-1">
+    <a
+      href="https://github.com/joe2824/pickmaster-tray-editor"
+      target="_blank"
+      rel="noopener noreferrer"
+      class="flex items-center gap-1.5 hover:text-white/70 transition-colors"
+    >
+      <ExternalLink size={9} class="shrink-0 opacity-60" />
+      <span>{t('disclaimer.openSource')}</span>
+    </a>
+    <div class="flex items-start gap-1.5">
+      <Lock size={9} class="shrink-0 mt-0.5 opacity-60" />
+      <div>
+        <p>{t('disclaimer.line1')}</p>
+        <p>{t('disclaimer.line2')}</p>
+      </div>
     </div>
   </div>
 </aside>

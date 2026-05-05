@@ -28,8 +28,8 @@
 </script>
 
 {#if tray}
-  <!-- Tray body -->
-  <T.Mesh position={[sx / 2, sy / 2, -sz / 2]} receiveShadow>
+  <!-- Tray body — high renderOrder so it draws after all item markers and can cover them via depthTest -->
+  <T.Mesh position={[sx / 2, sy / 2, -sz / 2]} receiveShadow renderOrder={9999}>
     <T.BoxGeometry args={[sx, sy, sz]} />
     <T.MeshPhongMaterial color={0x8b7355} shininess={10} />
   </T.Mesh>
